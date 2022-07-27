@@ -4,7 +4,8 @@ while(have_posts()) {
 the_post();
 pageBanner();
 ?>
-<div class = "generic-content"> <?php the_content(); ?></div>
+<div class="container container--narrow page-section">
+<div class = "generic-content" > <?php the_content(); ?></div>
 <?php
 $relatedProfessors = new WP_Query(array(
   'posts_per_page' => -1,
