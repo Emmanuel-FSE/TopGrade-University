@@ -5,7 +5,7 @@ the_post();
 pageBanner();
 ?>
 <div class="container container--narrow page-section">
-<div class = "generic-content" > <?php the_content(); ?></div>
+<div class = "generic-content" > <?php the_field('main_body_content'); ?></div>
 <?php
 $relatedProfessors = new WP_Query(array(
   'posts_per_page' => -1,
@@ -30,7 +30,7 @@ if($relatedProfessors -> have_posts()){
   <li class = "professor-card__list-item">
     <a class = "professor-card"href="<?php the_permalink(); ?>">
   <img class = "professor-card__image" src="<?php the_post_thumbnail_url('professorLandscape'); ?>">
-  <span><?php the_title(); ?></span>
+  <span class="professor-card__name"><?php the_title(); ?></span>
   </a>
   </li>
   <?php }
