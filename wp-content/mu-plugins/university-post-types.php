@@ -3,12 +3,12 @@
 function university_post_types() {
    //Campus Post Type
    register_post_type('campus', array(
-      'show_in_rest' => true,
-      'supports' => array('title', 'editor', 'excerpt'),
-      'rewrite' => array('slug' => 'campuses'),
-      'has_archive' => true,
-      'public' => true,
-       'labels' => array(
+   'show_in_rest' => true,
+   'supports' => array('title', 'editor', 'excerpt'),
+   'rewrite' => array('slug' => 'campuses'),
+   'has_archive' => true,
+   'public' => true,
+   'labels' => array(
           'name' => 'Campuses',
           'add_new_item' => 'Add New Campus',
           'edit_item' => 'Edit Campus',
@@ -19,14 +19,14 @@ function university_post_types() {
   ));
     //Event Post Type
     register_post_type('event', array(
-        'capability_type' => 'event',
-        'map_meta_cap' => true,
-        'show_in_rest' => true,
-        'supports' => array('title', 'editor', 'excerpt'),
-        'rewrite' => array('slug' => 'event'),
-        'has_archive' => true,
-        'public' => true,
-         'labels' => array(
+      'capability_type' => 'event',
+      'map_meta_cap' => true,
+      'show_in_rest' => true,
+      'supports' => array('title', 'editor', 'excerpt'),
+      'rewrite' => array('slug' => 'event'),
+      'has_archive' => true,
+      'public' => true,
+      'labels' => array(
             'name' => 'Events',
             'add_new_item' => 'Add New Event',
             'edit_item' => 'Edit Event',
@@ -37,12 +37,12 @@ function university_post_types() {
     ));
    //Program Post Type
     register_post_type('program', array(
-        'show_in_rest' => true,
-        'supports' => array('title',),
-        'rewrite' => array('slug' => 'programs'),
-        'has_archive' => true,
-        'public' => true,
-         'labels' => array(
+      'show_in_rest' => true,
+      'supports' => array('title',),
+      'rewrite' => array('slug' => 'programs'),
+      'has_archive' => true,
+      'public' => true,
+      'labels' => array(
             'name' => 'Programs',
             'add_new_item' => 'Add New Program',
             'edit_item' => 'Edit Program',
@@ -53,10 +53,10 @@ function university_post_types() {
     ));
     //Professor Post Type
     register_post_type('professor', array(
-        'show_in_rest' => true,
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'public' => true,
-         'labels' => array(
+      'show_in_rest' => true,
+      'supports' => array('title', 'editor', 'thumbnail'),
+      'public' => true,
+      'labels' => array(
             'name' => 'professors',
             'add_new_item' => 'Add New Professor',
             'edit_item' => 'Edit Professor',
@@ -66,12 +66,14 @@ function university_post_types() {
          'menu_icon' => 'dashicons-welcome-learn-more'
     ));
     //Note type
-register_post_type('note', array(
+   register_post_type('note', array(
+   'capability_type' => 'note',
+   'map_meta_cap' => true,
    'show_in_rest' => true,
    'supports' => array('title', 'editor',),
    'public' => false,
    'show_ui' => true,
-    'labels' => array(
+   'labels' => array(
        'name' => 'Notes',
        'add_new_item' => 'Add New Note',
        'edit_item' => 'Edit Note',
@@ -79,6 +81,20 @@ register_post_type('note', array(
        'singular_name' => 'Note'
     ),
     'menu_icon' => 'dashicons-welcome-write-blog'
+));
+// likes
+register_post_type('like', array(  
+'supports' => array('title'),
+'public' => false,
+'show_ui' => true,
+'labels' => array(
+    'name' => 'Likes',
+    'add_new_item' => 'Add New Like',
+    'edit_item' => 'Edit Like',
+    'all_items' => 'All Likes',
+    'singular_name' => 'Like'
+ ),
+ 'menu_icon' => 'dashicons-heart'
 ));
 }
 
