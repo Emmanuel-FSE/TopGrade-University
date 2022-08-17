@@ -20,17 +20,18 @@
  */
 
 // ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'local' );
+if(strstr($_SERVER['SERVER_NAME'], 'topgrade-university.local')){
+	define( 'DB_NAME', 'local' );
+    define( 'DB_USER', 'root' );
+    define( 'DB_PASSWORD', 'root' );
+    define( 'DB_HOST', 'localhost' );
+} else {
+    define( 'DB_NAME', 'heroku_637d890dea10cf1' );
+    define( 'DB_USER', 'ba5e26a469e28a' );
+    define( 'DB_PASSWORD', 'd1063cb5' );
+    define( 'DB_HOST', 'localhost' );
+}
 
-/** Database username */
-define( 'DB_USER', 'root' );
-
-/** Database password */
-define( 'DB_PASSWORD', 'root' );
-
-/** Database hostname */
-define( 'DB_HOST', 'localhost' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
