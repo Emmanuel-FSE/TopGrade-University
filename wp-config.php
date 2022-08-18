@@ -30,6 +30,7 @@ if(strstr($_SERVER['SERVER_NAME'], 'topgrade-university.local')){
     define( 'DB_USER', 'ba5e26a469e28a' );
     define( 'DB_PASSWORD', 'd1063cb5' );
     define( 'DB_HOST', 'eu-cdbr-west-03.cleardb.net' );
+    define( 'DB_CHARSET', 'utf8' );
 }
 
 
